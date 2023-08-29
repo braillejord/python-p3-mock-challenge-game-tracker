@@ -23,7 +23,7 @@ class Player:
         return [result.game for result in Result.all if result.player == self]
 
     def played_game(self, game):
-        if [result for result in Result.all if result.player == self and result.game == game]:
+        if self.num_times_played(game) > 0:
             return True
         else:
             return False
